@@ -11,7 +11,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(236, 238, 141);
+    background-color: rgb(255, 255, 255);
     font-size: 17px;
     font-family: ‘Segoe UI’, sans-serif;
 }
@@ -22,30 +22,31 @@ a {
 }
 
 a:hover {
-    color: rgb(141, 8, 123);
+    color: rgb(141, 8, 8);
     text-decoration: underline;
 }
 
-.topMenu {
-    background-color: rgb(255, 245, 183);
+.NavMenu {
+    background-color: rgb(228, 218, 218);
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 20px 60px 20px 60px;
+    padding: 20px 50px 20px 50px;
     color: black;
     border: dashed #000000;
     border-radius: 6px;
+    box-shadow: 1px 0px 50px red;
 }
 
-.pageName {
-    font-size: 15px;
-
-}
-
-.pageLinks {
-    display: flex;
+.NavLinks { 
+    font-size: 24px;
+    font-weight: bold;
+    display:flex;
+    width: 600px;
     flex-grow: 0.25;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 1px 0px 20px rgb(104, 83, 83);
 
 }
 
@@ -53,11 +54,11 @@ a:hover {
     margin-bottom: 40px;
 }
 
-/*middle body portion for actual data*/
+/*STYLE FOR HOME PAGE*/
 .header {
     display: flex;
     justify-content: center;
-    font-size: 45px;
+    font-size: 35px;
     margin-top: 20px;
 }
 
@@ -77,10 +78,16 @@ a:hover {
 
 .visualizations {
     display: flex;
-    flex-direction: column;
+    flex-direction:column
 }
 
-.map-heading {
+#map {
+   width: 400px;
+   height: 380px;
+   border: 2px dashed rgb(0, 0, 0)
+}
+
+.map_heading {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
@@ -88,13 +95,8 @@ a:hover {
     font-size: 18px;
 }
 
-.sec_vis_heading {
-    display: flex; 
-    justify-content: center;
-    height: 50px;
-    width: 600px;
-    border-radius: 5px;
-}
+
+
 .box {
     /*background-color: #b5d6d6;*/
     border: 2px dashed;
@@ -105,17 +107,55 @@ a:hover {
     padding: 1.5rem;
     margin: 0 auto;
   }
+
+
+
+.Filter_section {
+    flex 0 1 auto;
+    margin: 1rem;
+    
+  }
+
+.button_object {
+    padding-bottom:30px;
+}
+
+.inputs{
+    padding-bottom: 20px;
+}
+
+.refresh{
+    padding-top:30px;
+}
+
+.name-descriptions{
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+  }
   
+
+.do {
+    text-decoration: underline dotted;
+}
+.pa {
+    margin: 0px 80px 40px 80px;
+}
 
 
 .footer {
-    background-color:rgb(252, 215, 82);
+    background-color:rgb(228, 218, 218);
     bottom: 0;
     height: 80px;
     width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding: 30px;
+    border: dashed #000000;
+    border-radius: 6px;
 }
 
   

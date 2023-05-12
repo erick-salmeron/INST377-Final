@@ -1,62 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- THIS IS SIMPLY A LAYOUT FOR HOW THE CODE IS SUPPOSED TO LOOK-->
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terp Bus Stop Locator</title>
-    <!-- INSERT CSS SHEET HERE-->
-    <link rel="stylesheet" href="style.css" />
-    <!-- INSERT  link leaflet HERE-->
-
-    <!-- INSERT script leaflet SHEET HERE-->
+    <title>Terp Transit Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 </head>
 
 <body>
-    <div class="topMenu">
-        <!--TOP BOX MENU-->
-        <div class="pageName">
-            <strong>
-                <h1>Terp Bus Stop Locator</h1>
-            </strong>
-        </div>
-        <div class="pageLinks">
+    <div class="NavMenu">
+        <div class="ProjectLogo"><img src="images/Image_Identifier.png" alt="Terp Transit Finder"></div>
+        <div class="NavLinks">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
+            <a href="https://github.com/erick-salmeron/INST377-Final">Github Page</a>
         </div>
     </div>
 
     <div class="wrapper">
-        <!--WRAPPER-->
+        <!--This would be the top of the page introducing the visuals -->
         <header class="header">
-            <h2>Terp Bus Stop Locator</h2>
+            <h1> Welcome to Terp Transit Finder!</h1>
         </header>
-        <div class="subtitle">Find nearby bus stops based off building location</div>
+
+        <div class="subtitle">
+            <p>Youre not familiar with the transit on campus, no worries! Find nearby bus stops based off building
+                locations...</p>
+        </div>
+
+        <!--CONTAINER- Holds the visualizations -->
         <div class="container">
-            <!--CONTAINER-->
             <div class="visualizations">
-                <!--Center Visualization location-->
                 <div class="map_heading">Map of UMD Campus Bus Stops</div>
-                <div id="map" class="box">sss</div>
-                <div class="sec_vis_heading">Second Visualization</div>
-                <div id="sec" class="box">aaa</div>
+                <div id="map"></div>
+                <div class="building_list_section box">
+                    <h3>Buildings Currently on Map List:</h3>
+                    <ol class="box" id="building_list">
+                        A list of the buildings currently showing on the map
+                    </ol>
+                </div>
             </div>
-            <form class="filters">
-                <div class="map-filters" id="map-filters">
-                    <div class="filter-head"><strong>Map Filters</strong></div>
-                    <label for="building">building:</label>
-                    <select id="building" name="building">
-                    </select>
-                    <button type="submit" id="refresh-button">Refresh...</button>
-                </div>
-                <div class="visFilters">
-                </div>
+            <div class="Filter_section box">
+                <form action='https://api.umd.io/v1/map/buildings' class="main_form">
+                    <div class="button_object">
+                        <button type="button" id="data_load">Load UMD Building Data...</button>
+                        <button type="button" id="data_clear">Clear Data</button>
+                    </div>
+                    <div class="inputs box">
+                        <label for="build">Filter By Building Name:</label>
+                        <input type="text" id="build" name="build">
+                    </div>
+                    <div class="refresh">
+                        <button type="button" id="generate">Generate List</button>
+                    </div>
+            </div>
             </form>
         </div>
     </div>
-    <footer class="footer">Erick-Salmeron</footer>
-    </div>
+
+    <footer class="footer">
+        <p>2023 Ericks Website. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
